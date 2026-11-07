@@ -116,6 +116,25 @@
               <p>IFA Berlin (Niemcy) - Wrzesień 2027</p>
             </li>
           </ol>
+          <button type="button" id="otworz-pakowanie">Otwórz listę rzeczy do spakowania na wyjazd na targi MWC</button>
+          <dialog id="pakowanie" aria-labelledby="tytul-pakowania">
+            <h3 id="tytul-pakowania">Co spakować?</h3>
+            <ul>
+              <li>
+                dokument tożsamości
+              </li>
+              <li>
+                bilety (lotnicze, na targi)
+              </li>
+              <li>
+                powerbank
+              </li>
+              <li>
+                wygodne buty i strój
+              </li>
+            </ul>
+            <button type="button" id="zamknij-pakowanie">Zamknij</button>
+          </dialog>
           <table id="podroz-barcelona-mwc" border="1">
             <caption>
               Przykładowy koszt wyprawy na targi MWC Barcelona dla jednej osoby
@@ -288,5 +307,18 @@
         <p>© 2026 Norbert Pajor </p>
         <i><a href="#naglowek">Wróć na górę</a></i>
       </footer>
+      <script>
+          const przyciskOtworz = document.getElementById('otworz-pakowanie');
+          const przyciskZamknij = document.getElementById('zamknij-pakowanie');
+          const modalPakowanie = document.getElementById('pakowanie');
+          // Otwieranie modala
+          przyciskOtworz.addEventListener('click', () => {
+              modalPakowanie.showModal();
+          });
+          // Zamykanie modala przyciskiem
+          przyciskZamknij.addEventListener('click', () => {
+              modalPakowanie.close();
+          });
+      </script>
     </body>
   </html>
